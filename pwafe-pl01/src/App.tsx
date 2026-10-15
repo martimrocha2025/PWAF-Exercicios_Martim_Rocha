@@ -1,12 +1,19 @@
 export default function App() {
-  const nome = 'Rita';
+  const nome = 'Martim';
+  const curso = 'DS';
+  const ano = 2;
+  const cidade = 'Porto';
 
   return (
-    <>
-      <h1 className="titulo">Olá, {nome}!</h1>
-      <img src="/favicon.svg" alt="Logo" />
-      <p>Bem-vinda ao PWAFE</p>
-    </>
+    <main>
+      <h1>Olá, sou o {nome}!</h1>
+
+      <p>Estou no curso de {curso}</p>
+      <p>Estou no {ano}º ano. Para o próximo ano estou no {ano + 1}º ano.</p>
+      <p>Sou da cidade do {cidade}</p>
+    </main>
+
+    
   );
 
 
@@ -19,4 +26,9 @@ export default function App() {
   //3º -> É necessário colocar o h1, img e o p dentro de <> </>, se não dá erro
 
   //4º -> No <img> é necessário encerrar com /> e não com apenas >, se não dá erro
+
+
+
+
+
 }
