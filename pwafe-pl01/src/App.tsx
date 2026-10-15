@@ -1,16 +1,30 @@
 export default function App() {
-  const nome = 'Martim';
-  const curso = 'DS';
-  const ano = 2;
-  const cidade = 'Porto';
+  type Perfil = {
+  nome: string;
+  curso: string;
+  ano: number;
+  cidade: string;
+  interesses: string[];
+  procuraEstagio: boolean;
+  }
+
+  const perfil: Perfil = {
+    nome: 'Martim',
+    curso: 'DS',
+    ano: 2,
+    cidade: 'Porto',
+    interesses: ['Programação', 'Jogos', 'Música'],
+    procuraEstagio: true,
+  }
 
   return (
     <main>
-      <h1>Olá, sou o {nome}!</h1>
+      <h1>Olá, sou o {perfil.nome}!</h1>
 
-      <p>Estou no curso de {curso}</p>
-      <p>Estou no {ano}º ano. Para o próximo ano estou no {ano + 1}º ano.</p>
-      <p>Sou da cidade do {cidade}</p>
+      <p>Estou no curso de {perfil.curso}</p>
+      <p>Estou no {perfil.ano}º ano. Para o próximo ano estou no {perfil.ano + 1}º ano.</p>
+      <p>Sou da cidade do {perfil.cidade}</p>
+      <p>Os meus interesses são: {perfil.interesses.join(', ')}</p>
     </main>
 
     
