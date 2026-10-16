@@ -33,35 +33,31 @@ export default function App() {
 
   return (
     
-    <main>
-      
-      <h1>{saudacao(horaAtual)}</h1>
-      <h1>Olá, sou o {perfil.nome}!</h1>
+    <main className="min-h-screen bg-gray-100 p-8">
+      <div className="mx-auto max-w-2xl rounded-lg bg-white p-8 shadow-2xl font-sans font-semibold">
+        <p className="mb-6 text-sm text-gray-600">{saudacao(horaAtual)}</p>
 
-      <p>Estou no curso de {perfil.curso}</p>
-      <p>Estou no {perfil.ano}º ano. Para o próximo ano estou no {perfil.ano + 1}º ano.</p>
-      <p>Sou da cidade do {perfil.cidade}</p>
-      <p>Os meus interesses são: {perfil.interesses.join(', ')}</p>
-      
+        <section className="flex items-center gap-5">
+          <div className="flex size-16 shrink-0 items-center justify-center rounded-full bg-blue-100 text-2xl font-semibold text-blue-700">
+            {perfil.nome[0]}
+          </div>
+          <div>
+            <h1 className="text-3xl font-bold text-gray-900">{perfil.nome}</h1>
+            <p className="mt-1 text-sm text-gray-500">
+              {perfil.curso} · {perfil.ano}º ano · {perfil.cidade}
+            </p>
+          </div>
+        </section>
+
+        <div className="mt-6 flex flex-wrap gap-2">
+          {perfil.interesses.map((interesse) => (
+            <span className="rounded-full bg-blue-50 px-3 py-1 text-sm text-blue-700">
+              {interesse}
+            </span>
+          ))}
+        </div>
+      </div>
     </main>
-  
-
-    
   );
-   
-  }
-
-  //Erros 
-
-  //1º -> h1 class ="" está errado, o correto é className =""
-
-  //2º -> "Olá, nome!" iria mostrar literalmente "Olá, nome!", o correto é usar "Olá, {nome}!" para dizer que é uma variável
-
-  //3º -> É necessário colocar o h1, img e o p dentro de <> </>, se não dá erro
-
-  //4º -> No <img> é necessário encerrar com /> e não com apenas >, se não dá erro
-
-
-
-
+}
 
