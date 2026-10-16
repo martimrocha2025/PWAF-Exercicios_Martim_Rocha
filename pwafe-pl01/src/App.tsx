@@ -17,19 +17,39 @@ export default function App() {
     procuraEstagio: true,
   }
 
+  const horaAtual = new Date().getHours();
+
+  function saudacao(hora: number): string {
+    if (hora < 12) {
+      return 'Bom dia!'
+    }
+    else if (hora < 20) {
+      return 'Boa tarde!'
+    }
+    else {
+      return 'Boa noite!'
+    }
+  }
+
   return (
+    
     <main>
+      
+      <h1>{saudacao(horaAtual)}</h1>
       <h1>Olá, sou o {perfil.nome}!</h1>
 
       <p>Estou no curso de {perfil.curso}</p>
       <p>Estou no {perfil.ano}º ano. Para o próximo ano estou no {perfil.ano + 1}º ano.</p>
       <p>Sou da cidade do {perfil.cidade}</p>
       <p>Os meus interesses são: {perfil.interesses.join(', ')}</p>
+      
     </main>
+  
 
     
   );
-
+   
+  }
 
   //Erros 
 
@@ -45,4 +65,3 @@ export default function App() {
 
 
 
-}
