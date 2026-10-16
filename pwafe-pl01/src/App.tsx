@@ -35,9 +35,11 @@ export default function App() {
     
     <main className="min-h-screen bg-gray-100 p-8">
       <div className="mx-auto max-w-2xl rounded-lg bg-white p-8 shadow-2xl font-sans font-semibold">
-        <p className="mb-6 text-sm text-gray-600">{saudacao(horaAtual)}</p>
+        <p className="mb-6 text-center text-sm text-gray-600 md:text-left">
+          {saudacao(horaAtual)}
+        </p>
 
-        <section className="flex items-center gap-5">
+        <section className="flex flex-col items-center gap-5 text-center md:flex-row md:gap-8 md:text-left">
           <div className="flex size-16 shrink-0 items-center justify-center rounded-full bg-blue-100 text-2xl font-semibold text-blue-700">
             {perfil.nome[0]}
           </div>
@@ -49,7 +51,7 @@ export default function App() {
           </div>
         </section>
 
-        <div className="mt-6 flex flex-wrap gap-2">
+        <div className="mt-6 flex flex-wrap justify-center gap-2 md:justify-start">
           {perfil.interesses.map((interesse) => (
             <span className="rounded-full bg-blue-50 px-3 py-1 text-sm text-blue-700">
               {interesse}
@@ -60,4 +62,3 @@ export default function App() {
     </main>
   );
 }
-
